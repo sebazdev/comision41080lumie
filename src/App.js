@@ -1,20 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
+// import Counter from './components/Counter/Counter'
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
         <Navbar />
-        <img src={logo} className="App-logo" alt="logo" />
-        <p 
-          className="Parrafo"
-          // style={{ color: 'red', fontSize: 64}}
-        >
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-      </header>
+        {/* <Counter /> */}
+        <ItemListContainer greeting="Hola Coders"/>
     </div>
   );
 }
