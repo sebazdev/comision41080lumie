@@ -1,6 +1,9 @@
-const ItemListContainer = (props) => {
+const ItemListContainer = ({ greeting, setShow, show}) => {
     return (
-        <h1>{props.greeting}</h1>
+        <>
+            <h1>{greeting}</h1>
+            <button onClick={() => setShow(!show)}>show/hide</button>
+        </>
     )
 }
 

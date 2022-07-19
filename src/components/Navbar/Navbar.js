@@ -1,5 +1,4 @@
 import './Navbar.css'
-import Button from '../Button/Button'
 import CartWidget from '../CartWidget/CartWidget'
 
 const Navbar = () => {
@@ -8,13 +7,10 @@ const Navbar = () => {
             <div>
                 ECOMMERCE
             </div>
-            <div>
-                <Button 
-                    color="red" 
-                    handleClick={() => console.log('celular')}
-                >Celular</Button>
-                <Button color="blue" handleClick={() => console.log('tablet')}>Tablet</Button>
-                <Button color="green" handleClick={() => console.log('notebook')}> Notebook</Button>
+            <div className="Categories">
+                <button className="Option">Celulares</button>
+                <button className="Option">Tablets</button>
+                <button className="Option">Notebooks</button>
             </div>
             <CartWidget />
         </nav>

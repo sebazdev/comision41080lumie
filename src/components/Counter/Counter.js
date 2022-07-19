@@ -1,27 +1,38 @@
-import Button from '../Button/Button'
+import { useState, useEffect } from 'react'
 
+const Counter = ({ show, stock, initial, onAdd }) => {
+    const [count, setCount] = useState(0)
 
-const Counter = () => {
-    return (
-        <div className="container-card">
-            <div className="card">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRZ9DMNFHxwZcfPXJrJeBMITxPMP3FMZk_ixXzTfzt4G_C-G058"/>
-                <div className="contenido-card">
-                    <h3>Diseño Gràfico</h3>
-                    <p>Podemos crear la identidad corporativa de tu empresa. Diseño , Maquetación de folletos, Catálogos, Papelería y mucho más.</p>
-                    <div >
-                        <Button>-</Button>
-                        <h4>0</h4>
-                        <Button>+</Button>
-                    </div>
-                    <div>
-                    <Button style={{ width: '80%'}} >Agregar al carrito</Button>
-                    </div>
-                </div>
-            </div>
+    useEffect(() => {
+        console.log('function callback useEffect')
+
+        return () => console.log('el componente va a desmontarse')
+    }, [show])
+
+    // useEffect(() => {
+    //     console.log('se actualizo el estado count')
+    // }, [count])
+ 
+    const decrement = () => {
+        if(count > initial) {
+            setCount(count - 1)
+        }
+    }
+
+    const increment = () => {
+        if(count < stock) {
+            setCount(count + 1)
+        }
+    }
+    console.log('va a renderizar')
+    return(
+        <div>
+            <button onClick={decrement}>-</button> 
+            <p>{count}</p>
+            <button onClick={increment}>+</button>
+            <button onClick={() => onAdd(count)}>Agregar al carrito</button>
         </div>
-
     )
-}
+} 
 
 export default Counter
