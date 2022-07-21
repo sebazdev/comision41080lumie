@@ -14,8 +14,8 @@ function App() {
   return (
     <div className="App">
         <Navbar />
-        {/* {show ? <Counter /> : null} */}
-        <Counter show={show} stock={10} initial={1} onAdd={handleOnAdd}/>
+        {/* {show ? <Counter /> : null}
+        <Counter show={show} stock={10} initial={1} onAdd={handleOnAdd}/> */}
         <ItemListContainer show={show} setShow={setShow} greeting="Hola Coders"/>
     </div>
   );
