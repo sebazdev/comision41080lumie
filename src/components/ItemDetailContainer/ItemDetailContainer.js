@@ -3,18 +3,22 @@ import './ItemDetailContainer.css'
 import { useState, useEffect } from 'react'
 import { getProductById } from '../../asyncmock'
 import ItemDetail from '../ItemDetail/ItemDetail'
+import { useParams } from 'react-router-dom'
 
-const ItemDetailContainer = ({ page }) => {
-    const [product, setProduct] = useState()
+const ItemDetailContainer = () => {
+    const [product, setProduct] = useState({})
+
+    const { productId } = useParams()
 
     useEffect(() => {
-        getProductById(page.id).then(response => {
+        getProductById(productId).then(response => {
             setProduct(response)
         })
-    }, [page.id])
+    }, [productId])
 
     return(
         <div className='ItemDetailContainer'>
+            {/* React.createElement(ItemDetail, {...product}) */}
             <ItemDetail {...product}/>
         </div>
     )

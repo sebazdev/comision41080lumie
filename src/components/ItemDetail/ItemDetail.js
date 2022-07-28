@@ -1,8 +1,7 @@
 import './ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount'
 
-
-const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
+const ItemDetail = ({ id, name, category, img, price, stock, description}) => {
 
     const handleOnAdd = (quantity) => {
         console.log('agregue al carrito: ', quantity)

@@ -1,6 +1,7 @@
 import './Item.css'
+import { Link } from 'react-router-dom'
 
-const Item = ({id, name, img, price, setPage}) => {
+const Item = ({id, name, img, price }) => {
    
     return (
         <article className="CardItem">
@@ -18,7 +19,7 @@ const Item = ({id, name, img, price, setPage}) => {
                 </p>
             </section>           
             <footer className='ItemFooter'>
-                <button className='Option' onClick={() => setPage({ path: 'detail', id})}>Ver detalle</button>
+                <Link to={`/detail/${id}`} className='Option'>Ver detalle</Link>
             </footer>
         </article>
     )
