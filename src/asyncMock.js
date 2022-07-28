@@ -16,14 +16,14 @@ export const getProducts = () => {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve(products)
-        }, 2000)
+        }, 500)
     })
 }
 
-export const getProduct = () => {
-    return new Promise((resolve) => {
+export const getProductById = (id) => {
+    return new Promise (resolve => {
         setTimeout(() => {
-            resolve(products[0])
-        }, 2000)
+            resolve(products.find(prod => prod.id === id))
+        }, 500)
     })
 }

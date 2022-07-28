@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
-import { getProducts } from "../../asyncMock"
+import { getProducts } from "../../asyncmock"
 import ItemList from '../ItemList/ItemList'
 
-const ItemListContainer = ({ greeting, setShow, show}) => {
+const ItemListContainer = ({ greeting, setPage }) => {
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
 
@@ -14,21 +14,7 @@ const ItemListContainer = ({ greeting, setShow, show}) => {
         }).finally(() => {
             setLoading(false)
         })   
-        // (async () => {
-        //     try {
-        //         const response = await getProducts()
-        //         setProducts(response)
-        //     } catch (error) {
-        //         console.log(error)
-        //     } finally {
-        //         setLoading(false)
-        //     }
-        // })()
     }, [])
-
-    // const productosTransformados = products.map(product => (
-    //     <li key={product.id}>{product.name}</li>
-    // ))
 
     if(loading) {
         return <h1>Cargando productos...</h1>
@@ -37,7 +23,7 @@ const ItemListContainer = ({ greeting, setShow, show}) => {
     return (
         <>
             <h1>{greeting}</h1>
-            <ItemList products={products}/>
+            <ItemList products={products} setPage={setPage}/>
         </>
     )
 }

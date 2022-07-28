@@ -1,14 +1,26 @@
-const Item = ({ product }) => {
+import './Item.css'
 
-    const handleClick = (description) => {
-        console.log(description)
-    }
-
+const Item = ({id, name, img, price, setPage}) => {
+   
     return (
-        <>
-            <li key={product.id}>{product.name}</li>
-            <button onClick={handleClick}>ver detalle</button>
-        </>
+        <article className="CardItem">
+            <header className="Header">
+                <h2 className="ItemHeader">
+                    {name}
+                </h2>
+            </header>
+            <picture>
+                <img src={img} alt={name} className="ItemImg"/>
+            </picture>
+            <section>
+                <p className="Info">
+                    Precio: ${price}
+                </p>
+            </section>           
+            <footer className='ItemFooter'>
+                <button className='Option' onClick={() => setPage({ path: 'detail', id})}>Ver detalle</button>
+            </footer>
+        </article>
     )
 }
 
