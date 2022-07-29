@@ -1,0 +1,11 @@
+.NavContainer {
+    display: flex;
+    background-color: antiquewhite;
+}
+
+.Categories {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10%;
+}
